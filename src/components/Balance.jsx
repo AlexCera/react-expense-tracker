@@ -2,12 +2,13 @@ import { useGlobalContext } from "../context/GlobalContext"
 
 
 function Balance() {
-    const data = useGlobalContext();
+    const { transactions } = useGlobalContext();
+    const amounts = transactions.map(transaction => transaction.amount);
+    const total = amounts.reduce((sum, value) => (sum += value), 0)
     return (
         <>
-            <h2>Balance</h2>
-
-            <p> aa {JSON.stringify(data)}</p>
+            <h3>Your Balance</h3>
+            <h1>${total}</h1>
         </>
     )
 }
