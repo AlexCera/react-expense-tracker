@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useGlobalContext } from "../context/GlobalContext"
+import { useGlobalContext } from "../../context/GlobalContext"
 
 function TransactionForm() {
 
@@ -10,7 +10,7 @@ function TransactionForm() {
     const onSubmit = (e) => {
         e.preventDefault()
         addTransaction({
-            id: Math.round(Math.random() * 100),
+            id: window.crypto.randomUUID(),
             description,
             amount
         })
