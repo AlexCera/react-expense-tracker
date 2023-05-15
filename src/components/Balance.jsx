@@ -4,7 +4,7 @@ import { useGlobalContext } from "../context/GlobalContext"
 function Balance() {
     const { transactions } = useGlobalContext();
     const amounts = transactions.map(transaction => transaction.amount);
-    const total = amounts.reduce((sum, value) => (sum += value), 0)
+    const total = amounts.reduce((sum, value) => (sum += value), 0).toFixed(2)
     return (
         <div className="flex justify-between">
             <h3>Your Balance</h3>
