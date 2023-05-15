@@ -1,18 +1,18 @@
 import { useGlobalContext } from "../../context/GlobalContext"
+import { TransactionItem } from "./TransactionItem";
 
 function TransactionList() {
-    const { transactions, deleteTransaction } = useGlobalContext();
+    const { transactions } = useGlobalContext();
     return (
         <>
-            {
-                transactions.map(transaction => (
-                    <div key={transaction.id}>
-                        <p>{transaction.description}</p>
-                        <span>{transaction.amount}</span>
-                        <button title="Delete this transaction" onClick={() => deleteTransaction(transaction.id)}>X</button>
-                    </div>
-                ))
-            }
+            <h3 className="text-slate-300 text-xl font-bold block">History</h3>
+            <ul>
+                {
+                    transactions.map(transaction => (
+                        <TransactionItem transaction={transaction} key={transaction.id} />
+                    ))
+                }
+            </ul>
         </>
     )
 }

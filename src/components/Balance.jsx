@@ -6,10 +6,10 @@ function Balance() {
     const amounts = transactions.map(transaction => transaction.amount);
     const total = amounts.reduce((sum, value) => (sum += value), 0)
     return (
-        <>
+        <div className="flex justify-between">
             <h3>Your Balance</h3>
-            <h1>${total}</h1>
-        </>
+            <h1 className="text-2xl font-bold">${total}</h1>
+        </div>
     )
 }
 

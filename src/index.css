@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
     background: #141414 !important;
     color: #ffffff !important;
-}
+} */
 
 
 html::-webkit-scrollbar {
